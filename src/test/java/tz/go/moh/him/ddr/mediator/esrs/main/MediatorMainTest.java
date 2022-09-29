@@ -1,14 +1,10 @@
-package tz.go.moh.him.dhis2.mediator;
-
+package tz.go.moh.him.ddr.mediator.esrs.main;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openhim.mediator.engine.MediatorConfig;
-
+import tz.go.moh.him.ddr.mediator.esrs.MediatorMain;
 import java.lang.reflect.Method;
 
-/**
- * Contains tests for the {@link MediatorMain} class.
- */
 public class MediatorMainTest {
 
     /**
@@ -25,9 +21,8 @@ public class MediatorMainTest {
         MediatorConfig mediatorConfig = (MediatorConfig) loadConfigMethod.invoke(null, "src/test/resources/mediator.properties");
 
         Assert.assertEquals("localhost", mediatorConfig.getServerHost());
-        Assert.assertEquals(Integer.valueOf(3031), mediatorConfig.getServerPort());
-        Assert.assertEquals(Integer.valueOf(600000), mediatorConfig.getRootTimeout());
+        Assert.assertEquals(new Integer(3300), mediatorConfig.getServerPort());
+        Assert.assertEquals(new Integer(60000), mediatorConfig.getRootTimeout());
         Assert.assertTrue(mediatorConfig.getHeartsbeatEnabled());
     }
-
 }

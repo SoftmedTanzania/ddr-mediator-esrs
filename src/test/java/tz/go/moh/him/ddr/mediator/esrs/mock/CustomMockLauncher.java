@@ -1,5 +1,4 @@
-package tz.go.moh.him.dhis2.mediator;
-
+package tz.go.moh.him.ddr.mediator.esrs.mock;
 import akka.actor.Props;
 import org.openhim.mediator.engine.testing.MockLauncher;
 
