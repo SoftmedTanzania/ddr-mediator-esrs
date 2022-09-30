@@ -1,9 +1,9 @@
 # ddr-mediator-esrs
 
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/eb9fc4b8ee9849d5bd7c6a76bdb33995)](https://app.codacy.com/gh/SoftmedTanzania/dhis2-mediator-elmis?utm_source=github.com&utm_medium=referral&utm_content=SoftmedTanzania/dhis2-mediator-elmis&utm_campaign=Badge_Grade_Settings)
-[![Java CI Badge](https://github.com/SoftmedTanzania/dhis2-mediator-elmis/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/SoftmedTanzania/dhis2-mediator-elmis/actions?query=workflow%3A%22Java+CI+with+Maven%22)
-[![Coverage Status](https://coveralls.io/repos/github/SoftmedTanzania/dhis2-mediator-elmis/badge.svg?branch=development)](https://coveralls.io/github/SoftmedTanzania/dhis2-mediator-elmis?branch=development)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/eb9fc4b8ee9849d5bd7c6a76bdb33995)](https://app.codacy.com/gh/SoftmedTanzania/ddr-mediator-esrs?utm_source=github.com&utm_medium=referral&utm_content=SoftmedTanzania/ddr-mediator-esrs&utm_campaign=Badge_Grade_Settings)
+[![Java CI Badge](https://github.com/SoftmedTanzania/ddr-mediator-esrs/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/SoftmedTanzania/ddr-mediator-esrs/actions?query=workflow%3A%22Java+CI+with+Maven%22)
+[![Coverage Status](https://coveralls.io/repos/github/SoftmedTanzania/ddr-mediator-esrs/badge.svg?branch=development)](https://coveralls.io/github/SoftmedTanzania/ddr-mediator-esrs?branch=development)
 
 An [OpenHIM](http://openhim.org/) mediator for handling system integrations between ESRS and DDR.
 
@@ -137,5 +137,5 @@ To build and run the mediator after performing the above configurations, run the
 
 ```
   mvn clean package -DskipTests=true -e source:jar javadoc:jar
-  java -jar target/dhis2-mediator-<version>-jar-with-dependencies.jar
+  java -jar target/ddr-mediator-esrs<version>-jar-with-dependencies.jar
 ```
