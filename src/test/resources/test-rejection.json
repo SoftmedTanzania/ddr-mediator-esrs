@@ -78,7 +78,7 @@
       "Note": "false",
       "LIMSObservationCode": "Questionnaire-non-hvl-non heid-field-code",
       "LIMSObservationDesc": "Questionnaire-non-hvl-non-heid-field-description",
-      "LIMSRptResult": "",
+      "LIMSRptResult": "test-result",
       "LIMSRptUnits": null,
       "LIMSRptFlag": "",
       "LIMSRptRange": "",

@@ -1,5 +1,5 @@
 {
-  "urn": "urn:uuid:05aa99ca-74fe-42ce-8bff-4e5806c67080",
+  "urn": "urn:uuid:45df0c67-267e-417c-b92f-dacb141f097b",
   "version": "0.1.0",
   "name": "ESRS - DDR Mediator",
   "description": "A mediator to handle integrations between ESRS and DDR",

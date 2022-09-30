@@ -1,4 +1,5 @@
 package tz.go.moh.him.ddr.mediator.esrs.orchestrator;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import org.codehaus.plexus.util.StringUtils;
@@ -35,13 +36,15 @@ public class TestRejectionOrchestrator extends BaseOrchestrator {
      * @return array list of validation results details for failed validations
      */
     public List<ResultDetail> validateRequiredFields(TestRejections testRejection) {
-        List<ResultDetail> resultDetailsList = new ArrayList<>();
+        ArrayList<ResultDetail> resultDetailsList = new ArrayList<>();
 
-        if (StringUtils.isBlank(testRejection.getDateTimeStamp()))
+        if (StringUtils.isBlank(testRejection.getDateTimeStamp())) {
             resultDetailsList.add(new ResultDetail(ResultDetail.ResultsDetailsType.ERROR, String.format(errorMessageResource.getString("GENERIC_ERR"), "dateTimeStamp"), null));
+        }
 
-        if (StringUtils.isBlank(testRejection.getVersionStamp()))
+        if (StringUtils.isBlank(testRejection.getVersionStamp())) {
             resultDetailsList.add(new ResultDetail(ResultDetail.ResultsDetailsType.ERROR, String.format(errorMessageResource.getString("GENERIC_ERR"), "versionStamp"), null));
+        }
 
         if (StringUtils.isBlank(String.valueOf(testRejection.getObrSetID())))
             resultDetailsList.add(new ResultDetail(ResultDetail.ResultsDetailsType.ERROR, String.format(errorMessageResource.getString("GENERIC_ERR"), "obrSetID"), null));
@@ -100,9 +103,9 @@ public class TestRejectionOrchestrator extends BaseOrchestrator {
         if (testRejection.getTblResults().size() == 0)
             resultDetailsList.add(new ResultDetail(ResultDetail.ResultsDetailsType.ERROR, String.format(errorMessageResource.getString("GENERIC_ERR"), "tblResults"), null));
 
-        if (testRejection.getTblResults().size() > 0)
-        {
+        if (testRejection.getTblResults().size() > 0) {
             for (int i = 0; i < testRejection.getTblResults().size(); i++) {
+
                 if (StringUtils.isBlank(testRejection.getTblResults().get(i).getDateTimeStamp()))
                     resultDetailsList.add(new ResultDetail(ResultDetail.ResultsDetailsType.ERROR, String.format(errorMessageResource.getString("GENERIC_ERR"), "dateTimeStamp"), null));
 
@@ -209,8 +212,10 @@ public class TestRejectionOrchestrator extends BaseOrchestrator {
                 log.info("Received payload in JSON = " + new Gson().toJson(testRequest));
 
                 TestRejections validatedRequest;
-                if (validateRequiredFields(testRequest).size() > 0) {
 
+                log.info("results are: " + validateRequiredFields(testRequest));
+
+                if (validateRequiredFields(testRequest).size() > 0) {
                     for (ResultDetail resultDetail : validateRequiredFields(testRequest)) {
                         ErrorMessage errorMessage = new ErrorMessage(
                                 workingRequest.getBody(),
@@ -224,10 +229,9 @@ public class TestRejectionOrchestrator extends BaseOrchestrator {
                     validatedRequest = null;
                 } else {
                     validatedRequest = testRequest;
-
                 }
 
-                sendDataToLDR(new Gson().toJson(validatedRequest), Constants.REQUEST);
+                sendDataToLDR(new Gson().toJson(validatedRequest), Constants.TEST_REJECTION);
 
             } catch (Exception e) {
                 //In-case of an exception creating an error message with the stack trace

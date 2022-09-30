@@ -117,11 +117,8 @@ public abstract class BaseOrchestrator extends UntypedActor{
                 host = config.getProperty("destination.host");
                 portNumber = Integer.parseInt(config.getProperty("destination.api.port"));
                 switch (messageType) {
-                    case Constants.REQUEST:
+                    case Constants.TEST_REJECTION:
                         path = config.getProperty("destination.api.path.request");
-                        break;
-                    case Constants.RESULT:
-                        path = config.getProperty("destination.api.path.result");
                         break;
                     default:
                         path = null;
@@ -143,11 +140,8 @@ public abstract class BaseOrchestrator extends UntypedActor{
                 scheme = connectionProperties.getString("destinationScheme");
 
                 switch (messageType) {
-                    case Constants.REQUEST:
+                    case Constants.TEST_REJECTION:
                         path = connectionProperties.getString("destinationRequestPath");
-                        break;
-                    case Constants.RESULT:
-                        path = connectionProperties.getString("destinationResultPath");
                         break;
                     default:
                         path = null;
@@ -158,7 +152,7 @@ public abstract class BaseOrchestrator extends UntypedActor{
             List<Pair<String, String>> params = new ArrayList<>();
 
             MediatorHTTPRequest forwardToThscpRequest = new MediatorHTTPRequest(
-                    (workingRequest).getRequestHandler(), getSelf(), "Sending request data to esrs", "POST", scheme,
+                    (workingRequest).getRequestHandler(), getSelf(), "Sending request data to DDR", "POST", scheme,
                     host, portNumber, path, msg, headers, params
             );
 

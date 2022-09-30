@@ -135,7 +135,6 @@ public class TestRejectionsTest {
 
         assertEquals("2022-09-22 10:38:36", testRejections.getDateTimeStamp());
         assertEquals("1.0.0", testRejections.getVersionStamp());
-        assertEquals("2", testRejections.getObrSetID());
         assertEquals("test-code", testRejections.getLoincPanelCode());
         assertEquals("EID", testRejections.getLimsPanelCode());
         assertEquals("EID", testRejections.getLimsPanelDesc());

@@ -1,11 +1,11 @@
-# dhis2-mediator-elmis
+# ddr-mediator-esrs
 
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/eb9fc4b8ee9849d5bd7c6a76bdb33995)](https://app.codacy.com/gh/SoftmedTanzania/dhis2-mediator-elmis?utm_source=github.com&utm_medium=referral&utm_content=SoftmedTanzania/dhis2-mediator-elmis&utm_campaign=Badge_Grade_Settings)
 [![Java CI Badge](https://github.com/SoftmedTanzania/dhis2-mediator-elmis/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/SoftmedTanzania/dhis2-mediator-elmis/actions?query=workflow%3A%22Java+CI+with+Maven%22)
 [![Coverage Status](https://coveralls.io/repos/github/SoftmedTanzania/dhis2-mediator-elmis/badge.svg?branch=development)](https://coveralls.io/github/SoftmedTanzania/dhis2-mediator-elmis?branch=development)
 
-An [OpenHIM](http://openhim.org/) mediator for handling system integrations with DHIS2.
+An [OpenHIM](http://openhim.org/) mediator for handling system integrations between ESRS and DDR.
 
 ## 1. Dev Requirements
 
@@ -15,8 +15,7 @@ An [OpenHIM](http://openhim.org/) mediator for handling system integrations with
 
 ## 2. Mediator Configuration
 
-This mediator is designed to work with multiple systems that do not require any message transformations or any data validation to the message payload to DHIS2.
-The mediator handles processing of DHIS2 response messages, in cases that DHIS2 responds with HTTP status code 200 while some data had failed during processing, before sending the response to HIM.
+This mediator is designed to handle the integrations between ESRS and DDR including validating the payload as it is sent from ESRS to DDR through HIM
 
 ### 3 Configuration Parameters
 
