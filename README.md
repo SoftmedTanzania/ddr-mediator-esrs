@@ -24,7 +24,7 @@ The configuration parameters specific to the mediator and destination system can
 `src/main/resources/mediator.properties`
 
 ```
-    mediator.name=eLMIS-to-DHIS2-Mediator
+    mediator.name=ESRS-to-DDR-Mediator
     mediator.host=localhost
     mediator.port=3031
     mediator.timeout=60000
@@ -49,29 +49,29 @@ The configuration parameters specific to the mediator and the mediator's metadat
     {
         "urn": "urn:uuid:c11b99a0-d8af-11eb-badb-9d2a2a013a07",
         "version": "0.1.0",
-        "name": "eLMIS - DHIS2 Mediator",
-        "description": "An openHIM mediator for handling system integration between eLMIS and DHIS2",
+        "name": "DDR - ESRS Mediator",
+        "description": "An openHIM mediator for handling system integration between ESRS and DDR",
         "endpoints": [
             {
-                "name": "eLMIS to DHIS2 Mediator Route",
+                "name": "ESRS to DDR Mediator Route",
                 "host": "localhost",
                 "port": "3031",
-                "path": "/dhis2",
+                "path": "/send-test-rejections",
                 "type": "http"
             }
         ],
         "defaultChannelConfig": [
             {
-                "name": "eLMIS to DHIS2 Mediator",
-                "urlPattern": "^/dhis2$",
+                "name": "ESRS to DDR Mediator",
+                "urlPattern": "^/send-test-rejections",
                 "type": "http",
-                "allow": ["elmis-role"],
+                "allow": ["esrs-role"],
                 "routes": [
                     {
-                        "name": "eLMIS - DHIS2 Mediator Route",
+                        "name": "ESRS - DDR Mediator Route",
                         "host": "localhost",
                         "port": "3031",
-                        "path": "/dhis2",
+                        "path": "/send-test-rejections",
                         "type": "http",
                         "primary": "true"
                     }
