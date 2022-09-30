@@ -8,14 +8,14 @@
       "name": "ddr-mediator-esrs Test Request Route",
       "host": "localhost",
       "port": "3600",
-      "path": "/esrs-test-rejection",
+      "path": "/send-test-rejections",
       "type": "http"
     }
   ],
   "defaultChannelConfig": [
     {
       "name": "ESRS - DDR Request Channel",
-      "urlPattern": "^/esrs-test-rejection$",
+      "urlPattern": "^/send-test-rejections$",
       "type": "http",
       "allow": [
         "esrs-role"
@@ -25,7 +25,7 @@
           "name": "DDR Mediator ESRS Test Request Route",
           "host": "localhost",
           "port": "3600",
-          "path": "/esrs-test-rejection",
+          "path": "/send-test-rejections",
           "type": "http",
           "primary": "true"
         }
