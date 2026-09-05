@@ -139,3 +139,5 @@ To build and run the mediator after performing the above configurations, run the
   mvn clean package -DskipTests=true -e source:jar javadoc:jar
   java -jar target/ddr-mediator-esrs<version>-jar-with-dependencies.jar
 ```
+
+<!-- Security scan triggered at 2026-09-05 07:28:48 -->
